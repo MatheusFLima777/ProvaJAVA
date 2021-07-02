@@ -1,0 +1,14 @@
+package Banco;
+
+/**
+ *
+ * @author limam
+ */
+public class ContaPoupanca extends Conta{
+    ContaPoupanca(){
+        setRendimento(0.13/100);
+        setDataAbertura(02/07/2021);
+        setSaldo(0);
+    }
+    
+}

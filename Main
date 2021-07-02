@@ -1,0 +1,144 @@
+package Banco;
+
+import java.util.Scanner;
+
+public class Main{
+    
+    public static void main(String[] args){  
+ Scanner op = new Scanner(System.in);
+
+ 
+ContaInvestimento ci;
+ContaPoupanca cp;
+ int oc;
+ int opcao;
+ String nome;
+ int conta;
+ String agencia;
+ int valor;
+ 
+ cp = new ContaPoupanca();
+ ci = new ContaInvestimento();
+ 
+do{
+System.out.println("1 - Abrir conta");
+System.out.println("2 - Saldo");
+System.out.println("3 - Depositar");
+System.out.println("4 - Sacar");
+System.out.println("5 - Investimento");
+System.out.println("6 - Sair");
+opcao = op.nextInt();
+
+
+ 
+switch(opcao){
+
+    case 1:  
+    System.out.println("Informe seu nome: ");
+    nome = op.next();
+    System.out.println("Escolha seu tipo de conta: ");
+    System.out.println("1 - Conta Poupança \n 2 - Conta Investidor");
+    conta = op.nextInt();
+    
+    if(conta==1){
+        oc = op.nextInt();
+    if(oc==1){
+    cp = new ContaPoupanca();
+    System.out.println("Conta Criada com sucesso!");
+    break;
+    }
+    } 
+else if(opcao==2){
+    oc = op.nextInt();
+    if(oc==2){
+     ci = new ContaInvestimento(); 
+     System.out.println("Conta Criada com sucesso!");
+     break;
+    }  
+    }  
+  else{
+ System.out.println("Operação Invalida!!");
+}
+    case 2:{
+    System.out.println("Qual é o tipo da sua conta: ");
+    System.out.println("1 - Poupança \n 2 - Investimento");
+    oc = op.nextInt();
+    if(oc==1){
+        System.out.println("O saldo da sua conta é: "+cp.getSaldo());
+        break;
+        
+    }
+    else{
+        System.out.println("O saldo da sua conta é:"+ci.getSaldo() );
+        break;
+    }
+    
+}
+    case 3:{
+    System.out.println("Qual é o tipo da sua conta: ");
+    System.out.println("1 - Poupança \n 2 - Investimento");
+    oc = op.nextInt();
+    if(oc==1){
+        System.out.println("Informe o valor que você quer depositar: ");
+      valor = op.nextInt();
+      System.out.println("O saldo da sua conta será: "+ cp.depositar(valor));
+      break;
+     
+    }
+    else{
+      System.out.println("Informe o valor que você quer depositar: ");
+      valor = op.nextInt();
+      System.out.println("O saldo da sua conta será: "+ ci.depositar(valor));
+      break;
+        
+    }
+}
+    case 4:{
+         System.out.println("Qual é o tipo da sua conta: ");
+        System.out.println("1 - Poupança \n 2 - Investimento");
+        oc = op.nextInt();
+        if(oc==1){
+        System.out.println("Informe o valor que você quer sacar: ");
+        valor = op.nextInt();
+        System.out.println(cp.sacar(valor));
+        break;
+        }
+        else{
+             System.out.println("Informe o valor que você quer sacar: ");
+        valor = op.nextInt();
+        System.out.println(ci.sacar(valor));
+        System.out.println("O saldo da sua conta é:"+ci.getSaldo() );
+        break;
+            
+        }
+    
+}
+    case 5:{
+System.out.println("Digite o número da sua Agencia: ");
+agencia = op.next();
+System.out.println("Qual é o tipo da sua conta: ");
+System.out.println("1 - Poupança \n 2 - Investimento");
+oc = op.nextInt();
+ if(oc==1){
+System.out.println("O rendimento do seu dinheiro mensalmente é: "+ cp.getRendimento());    
+break;
+ }
+  if(oc==2){
+System.out.println("O rendimento do seu dinheiro mensalmente é: "+ ci.getRendimento());    
+break;
+ }
+    
+}
+    case 6:{
+    System.out.println("Volte sempre");
+    
+}
+if(opcao<7){
+   System.out.println("Opção Inválida!!!");
+   break;  
+  
+}
+}
+} while(opcao<7);
+}
+}

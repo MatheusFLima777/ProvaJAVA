@@ -1,0 +1,14 @@
+package Banco;
+
+/**
+ *
+ * @author limam
+ */
+public class ContaInvestimento extends Conta{
+    ContaInvestimento(){
+        setRendimento(4.25/100);
+        setDataAbertura(02/07/2021);
+        setSaldo(0);
+    }
+    
+}

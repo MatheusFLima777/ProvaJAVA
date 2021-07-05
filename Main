@@ -14,7 +14,7 @@ ContaPoupanca cp;
  int opcao;
  String nome;
  int conta;
- String agencia;
+ int agencia;
  int valor;
  
  cp = new ContaPoupanca();
@@ -60,6 +60,8 @@ else if(opcao==2){
  System.out.println("Operação Invalida!!");
 }
     case 2:{
+    System.out.println("Digite o número da sua agência: ");
+    agencia = op.nextInt();
     System.out.println("Qual é o tipo da sua conta: ");
     System.out.println("1 - Poupança \n 2 - Investimento");
     oc = op.nextInt();
@@ -75,6 +77,8 @@ else if(opcao==2){
     
 }
     case 3:{
+    System.out.println("Digite o número da sua agência: ");
+    agencia = op.nextInt();
     System.out.println("Qual é o tipo da sua conta: ");
     System.out.println("1 - Poupança \n 2 - Investimento");
     oc = op.nextInt();
@@ -94,6 +98,8 @@ else if(opcao==2){
     }
 }
     case 4:{
+        System.out.println("Digite o número da sua agência: ");
+        agencia = op.nextInt();
          System.out.println("Qual é o tipo da sua conta: ");
         System.out.println("1 - Poupança \n 2 - Investimento");
         oc = op.nextInt();
@@ -115,7 +121,7 @@ else if(opcao==2){
 }
     case 5:{
 System.out.println("Digite o número da sua Agencia: ");
-agencia = op.next();
+agencia = op.nextInt();
 System.out.println("Qual é o tipo da sua conta: ");
 System.out.println("1 - Poupança \n 2 - Investimento");
 oc = op.nextInt();
@@ -139,6 +145,14 @@ if(opcao<7){
   
 }
 }
-} while(opcao<7);
+} while(opcao<=7);
 }
 }
+        
+
+        
+
+
+        
+
+
